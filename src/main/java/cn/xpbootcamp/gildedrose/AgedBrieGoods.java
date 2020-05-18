@@ -1,12 +1,10 @@
 package cn.xpbootcamp.gildedrose;
 
 public class AgedBrieGoods {
-    private String name;
     private int sellIn;
     private int quantity;
 
-    public AgedBrieGoods(String name, int sellIn, int quantity) {
-        this.name = name;
+    public AgedBrieGoods(int sellIn, int quantity) {
         this.sellIn = sellIn;
         this.quantity = quantity;
     }
@@ -20,7 +18,12 @@ public class AgedBrieGoods {
     }
 
     public void passDays(int pastDays) {
-        this.sellIn = 0;
-        this.quantity = 3;
+        this.sellIn--;
+        if (this.sellIn - pastDays >= 0) {
+            this.quantity++;
+        } else {
+            this.quantity += 2;
+        }
+        this.quantity = Math.min(50, this.quantity);
     }
 }

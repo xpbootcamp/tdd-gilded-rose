@@ -1,12 +1,10 @@
 package cn.xpbootcamp.gildedrose;
 
 public class NormalGoods {
-    private String name;
     private int sellIn;
     private int quantity;
 
-    public NormalGoods(String name, int sellIn, int quantity) {
-        this.name = name;
+    public NormalGoods(int sellIn, int quantity) {
         this.sellIn = sellIn;
         this.quantity = quantity;
     }
