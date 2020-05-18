@@ -26,6 +26,7 @@ public class NormalGoods {
         } else {
             this.quantity -= 2;
         }
+        this.quantity = Math.max(0, this.quantity);
     }
 
 }
