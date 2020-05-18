@@ -18,15 +18,18 @@ public class BackstagePassGoods {
     }
 
     public void passDays(int pastDays) {
-        boolean EXPIRE_IN_TEN_DAYS = this.sellIn - pastDays < 10;
-        boolean EXPIRE_IN_FIVE_DAYS = this.sellIn - pastDays < 5;
+        boolean is_expire_in_ten_days = this.sellIn - pastDays < 10;
+        boolean is_expire_in_five_days = this.sellIn - pastDays < 5;
+        boolean is_expire = this.sellIn - pastDays < 0;
         int DAILY_ADD_TWO_POINT = 2;
         int DAILY_ADD_THREE_POINT = 3;
 
         this.sellIn--;
-        if (EXPIRE_IN_FIVE_DAYS) {
+        if (is_expire) {
+            this.quantity = 0;
+        } else if (is_expire_in_five_days) {
             this.quantity += DAILY_ADD_THREE_POINT;
-        } else if (EXPIRE_IN_TEN_DAYS) {
+        } else if (is_expire_in_ten_days) {
             this.quantity += DAILY_ADD_TWO_POINT;
         } else {
             this.quantity++;
