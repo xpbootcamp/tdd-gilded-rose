@@ -62,9 +62,18 @@ public class BackstagePassTest {
         assertEquals(0, backstagePassGoods.getQuantity());
     }
 
+
     @Test
     void should_get_sellIn_is_negative_1_quantity_is_0_when_past_1_days_given_a_Backstage_Pass_goods_with_sellIn_is_0_quantity_is_30() {
         BackstagePassGoods backstagePassGoods = new BackstagePassGoods(0, 30);
+        backstagePassGoods.passDays(1);
+        assertEquals(-1, backstagePassGoods.getSellIn());
+        assertEquals(0, backstagePassGoods.getQuantity());
+    }
+
+    @Test
+    void should_get_sellIn_is_negative_1_quantity_is_0_when_past_1_days_given_a_Backstage_Pass_goods_with_sellIn_is_0_quantity_is_50() {
+        BackstagePassGoods backstagePassGoods = new BackstagePassGoods(0, 50);
         backstagePassGoods.passDays(1);
         assertEquals(-1, backstagePassGoods.getSellIn());
         assertEquals(0, backstagePassGoods.getQuantity());
