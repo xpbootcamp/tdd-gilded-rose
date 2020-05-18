@@ -12,5 +12,13 @@ public class BackstagePassTest {
         assertEquals(11, backstagePassGoods.getSellIn());
         assertEquals(50, backstagePassGoods.getQuantity());
     }
+
+    @Test
+    void should_get_sellIn_is_10_quantity_is_50_when_past_1_days_given_a_Backstage_Pass_goods_with_sellIn_is_11_quantity_is_50() {
+        BackstagePassGoods backstagePassGoods = new BackstagePassGoods(11, 50);
+        backstagePassGoods.passDays(1);
+        assertEquals(10, backstagePassGoods.getSellIn());
+        assertEquals(50, backstagePassGoods.getQuantity());
+    }
 }
 
