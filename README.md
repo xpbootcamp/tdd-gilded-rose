@@ -1,5 +1,6 @@
 # TDD @Gilded Rose
 
+![Build](https://github.com/xpbootcamp/tdd-gilded-rose/workflows/Build/badge.svg)
 
 ## 开发环境
  - JDK1.8+
