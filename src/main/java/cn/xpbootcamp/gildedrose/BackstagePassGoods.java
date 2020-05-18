@@ -19,7 +19,12 @@ public class BackstagePassGoods {
 
     public void passDays(int pastDays) {
         this.sellIn--;
-        this.quantity++;
+        if (this.sellIn - pastDays < 10) {
+            this.quantity += 2;
+        } else {
+            this.quantity++;
+        }
+
         this.quantity = Math.min(50, this.quantity);
     }
 }
