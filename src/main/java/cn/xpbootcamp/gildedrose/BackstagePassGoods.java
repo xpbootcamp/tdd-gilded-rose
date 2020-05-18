@@ -18,9 +18,12 @@ public class BackstagePassGoods {
     }
 
     public void passDays(int pastDays) {
+        boolean EXPIRE_IN_TEN_DAYS = this.sellIn - pastDays < 10;
+        int DAILY_ADD_TWO_POINT = 2;
+
         this.sellIn--;
-        if (this.sellIn - pastDays < 10) {
-            this.quantity += 2;
+        if (EXPIRE_IN_TEN_DAYS) {
+            this.quantity += DAILY_ADD_TWO_POINT;
         } else {
             this.quantity++;
         }
