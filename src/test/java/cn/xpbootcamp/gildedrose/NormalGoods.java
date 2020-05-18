@@ -6,9 +6,9 @@ public class NormalGoods {
     private int quantity;
 
     public NormalGoods(String name, int sellIn, int quantity) {
-      this.name = name;
-      this.sellIn = sellIn;
-      this.quantity = quantity;
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quantity = quantity;
     }
 
     public int getSellIn() {
@@ -19,17 +19,13 @@ public class NormalGoods {
         return this.quantity;
     }
 
-    private void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    private void setSellIn(int sellIn) {
-        this.sellIn = sellIn;
-    }
-
     public void passDays(int pastDays) {
-        this.setSellIn(0);
-        this.setQuantity(1);
+        this.sellIn--;
+        if (this.sellIn - pastDays >= 0) {
+            this.quantity--;
+        } else {
+            this.quantity -= 2;
+        }
     }
 
 }
