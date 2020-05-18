@@ -18,13 +18,19 @@ public class NormalGoods {
     }
 
     public void passDays(int pastDays) {
+        int GOODS_MIN_VALUE = 0;
+        int DAILY_REDUCE_ONE_POINT = 1;
+        int DAILY_REDUCE_TWO_POINT = 2;
+
+        boolean isExpired = this.sellIn - pastDays < 0;
         this.sellIn--;
-        if (this.sellIn - pastDays >= 0) {
-            this.quantity--;
+
+        if (isExpired) {
+            this.quantity -= DAILY_REDUCE_TWO_POINT;
         } else {
-            this.quantity -= 2;
+            this.quantity -= DAILY_REDUCE_ONE_POINT;
         }
-        this.quantity = Math.max(0, this.quantity);
+        this.quantity = Math.max(GOODS_MIN_VALUE, this.quantity);
     }
 
 }
