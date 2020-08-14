@@ -20,7 +20,7 @@ public class Goods {
         return quality;
     }
 
-    public double getSellIn() {
+    public int getSellIn() {
         return sellIn;
     }
 }

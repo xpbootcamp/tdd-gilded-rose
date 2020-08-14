@@ -16,7 +16,7 @@ public class GoodsTest {
         goods.updateByDay();
 
         double newQuality = goods.getQuality();
-        double newSellIn = goods.getSellIn();
+        int newSellIn = goods.getSellIn();
 
         assertThat(newQuality).isEqualTo(oldQuality - 1);
         assertThat(newSellIn).isEqualTo(oldSellIn - 1);
@@ -32,7 +32,7 @@ public class GoodsTest {
         goods.updateByDay();
 
         double newQuality = goods.getQuality();
-        double newSellIn = goods.getSellIn();
+        int newSellIn = goods.getSellIn();
 
         assertThat(newQuality).isEqualTo(0);
         assertThat(newSellIn).isEqualTo(oldSellIn - 1);
