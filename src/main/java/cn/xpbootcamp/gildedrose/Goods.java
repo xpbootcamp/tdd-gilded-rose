@@ -20,6 +20,11 @@ public class Goods {
             }
             return;
         }
+        if ("Backstage Pass".equals(name)) {
+            quality = quality + 1;
+            sellIn = sellIn - 1;
+            return;
+        }
         decreaseQuality();
         decreaseSellIn();
         if (sellIn < 0) {
