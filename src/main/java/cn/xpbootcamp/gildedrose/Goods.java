@@ -14,9 +14,12 @@ public class Goods {
     public void updateByDay() {
         if ("Aged Brie".equals(name)) {
             if (quality < 50) {
-                quality = quality + 1;
+                increaseQuality();
             }
             decreaseSellIn();
+            if (sellIn < 0) {
+                increaseQuality();
+            }
             return;
         }
         decreaseQuality();
@@ -24,6 +27,10 @@ public class Goods {
         if (sellIn < 0) {
             decreaseQuality();
         }
+    }
+
+    private void increaseQuality() {
+        quality = quality + 1;
     }
 
     private void decreaseSellIn() {
