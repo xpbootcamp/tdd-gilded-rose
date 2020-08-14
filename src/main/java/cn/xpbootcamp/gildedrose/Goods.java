@@ -28,6 +28,9 @@ public class Goods {
         if (sellIn < 11) {
             increaseQuality();
         }
+        if (sellIn < 6) {
+            quality = quality + 1;
+        }
         decreaseSellIn();
     }
 
