@@ -53,4 +53,20 @@ public class AgedBrieTest {
         assertThat(newSellIn).isEqualTo(oldSellIn - 1);
     }
 
+    @Test
+    public void should_quality_is_50_and_sellIn_decrease_by_1_when_update_given_out_sell_and_is_49() {
+        double oldQuality = 49;
+        int oldSellIn = 0;
+
+        Goods goods = new Goods("Aged Brie", oldQuality, oldSellIn);
+
+        goods.updateByDay();
+
+        double newQuality = goods.getQuality();
+        int newSellIn = goods.getSellIn();
+
+        assertThat(newQuality).isEqualTo(oldQuality + 1);
+        assertThat(newSellIn).isEqualTo(oldSellIn - 1);
+    }
+
 }
