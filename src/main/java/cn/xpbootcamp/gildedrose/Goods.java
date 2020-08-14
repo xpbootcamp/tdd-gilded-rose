@@ -26,7 +26,7 @@ public class Goods {
     private void updateBackstagePass() {
         increaseQuality();
         if (sellIn < 11) {
-            quality = quality + 1;
+            increaseQuality();
         }
         decreaseSellIn();
     }
