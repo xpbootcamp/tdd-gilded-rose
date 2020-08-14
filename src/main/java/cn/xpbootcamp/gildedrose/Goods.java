@@ -1,7 +1,7 @@
 package cn.xpbootcamp.gildedrose;
 
 public class Goods {
-    private String name;
+    private final String name;
     private double quality;
     private int sellIn;
 
@@ -13,18 +13,30 @@ public class Goods {
 
     public void updateByDay() {
         if ("Aged Brie".equals(name)) {
-            increaseQuality();
-            decreaseSellIn();
-            if (sellIn < 0) {
-                increaseQuality();
-            }
+            updateAgedBrie();
             return;
         }
         if ("Backstage Pass".equals(name)) {
-            quality = quality + 1;
-            sellIn = sellIn - 1;
+            updateBackstagePass();
             return;
         }
+        updateRegularGoods();
+    }
+
+    private void updateBackstagePass() {
+        quality = quality + 1;
+        sellIn = sellIn - 1;
+    }
+
+    private void updateAgedBrie() {
+        increaseQuality();
+        decreaseSellIn();
+        if (sellIn < 0) {
+            increaseQuality();
+        }
+    }
+
+    private void updateRegularGoods() {
         decreaseQuality();
         decreaseSellIn();
         if (sellIn < 0) {
