@@ -101,4 +101,20 @@ public class BackstagePassTest {
         assertThat(newQuality).isEqualTo(oldQuality + 2);
         assertThat(newSellIn).isEqualTo(oldSellIn - 1);
     }
+
+    @Test
+    public void should_quality_is_0_and_sellIn_decrease_by_1_when_update_given_out_sellIn() {
+        double oldQuality = 25;
+        int oldSellIn = 0;
+
+        Goods goods = new Goods("Backstage Pass", oldQuality, oldSellIn);
+
+        goods.updateByDay();
+
+        double newQuality = goods.getQuality();
+        int newSellIn = goods.getSellIn();
+
+        assertThat(newQuality).isEqualTo(0);
+        assertThat(newSellIn).isEqualTo(oldSellIn - 1);
+    }
 }

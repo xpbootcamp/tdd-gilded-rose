@@ -32,6 +32,9 @@ public class Goods {
             increaseQuality();
         }
         decreaseSellIn();
+        if (sellIn < 0) {
+            quality = 0;
+        }
     }
 
     private void updateAgedBrie() {
