@@ -1,19 +1,27 @@
 package cn.xpbootcamp.gildedrose;
 
 public class Goods {
+    private String name;
     private double quality;
     private int sellIn;
 
     public Goods(String name, double quality, int sellIn) {
+        this.name = name;
         this.quality = quality;
         this.sellIn = sellIn;
     }
 
     public void updateByDay() {
-        decreaseQuality();
-        sellIn = sellIn - 1;
-        if (sellIn < 0) {
+        if ("Aged Brie".equals(name)) {
+            quality = quality + 1;
+            sellIn = sellIn - 1;
+        } else {
+
             decreaseQuality();
+            sellIn = sellIn - 1;
+            if (sellIn < 0) {
+                decreaseQuality();
+            }
         }
     }
 

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GoodsTest {
+public class RegularGoodsTest {
 
     @Test
     public void should_quality_and_sellIn_decrease_by_1_when_update_given_in_sell_and_quality_between_0_50() {
