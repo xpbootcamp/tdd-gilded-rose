@@ -24,8 +24,8 @@ public class Goods {
     }
 
     private void updateBackstagePass() {
-        quality = quality + 1;
-        sellIn = sellIn - 1;
+        increaseQuality();
+        decreaseSellIn();
     }
 
     private void updateAgedBrie() {
